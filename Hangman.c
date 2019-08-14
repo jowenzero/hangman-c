@@ -264,7 +264,7 @@ int main()
 							fwrite(&highScore, sizeof (highScore), 1, scoreData);
 							fclose(scoreData);
 						}
-						else if (score == 0) // if score is 0 and no score data exist
+						else if (score == 0 && scoreData == NULL) // if score is 0 and no score data exist
 						{
 							scoreData = fopen("score.owen", "wb");
 							fwrite(&score, sizeof (score), 1, scoreData);
