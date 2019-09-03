@@ -80,6 +80,7 @@ int main()
 			printf("Data 'score.owen' not found and will be created after game over\n\n");
 		}
 		printf("Best Score: %d\n", highScore);
+		fclose(scoreData);
 		
 		// display menu
 		printf("1. Play!\n");
@@ -99,6 +100,7 @@ int main()
 		if (choice == 1 && gameOverFlag == false)
 		{
 			puts("");
+			
 			// prompt user to start game
 			do
 			{
@@ -125,13 +127,9 @@ int main()
 				
 				// uppercase guess word
 				for (i = 0; i < wordCount; i++)
-				{
 					guessWord[i] = toupper(guessWord[i]);
-				}
 				for (i = 0; i < 20; i++)
-				{
 					guessLine[i] = ' ';
-				}
 				
 				if (level > 0)
 				{
@@ -157,9 +155,7 @@ int main()
 						
 						//display incorrect characters
 						for (i = 0; i < mistake; i++)
-						{
 							printf("%c ", mistakeChar[i]);
-						}
 						
 						// display initial guess word lines
 						if (trueCounter == 0)
@@ -318,6 +314,7 @@ int main()
 	puts("");
 	printf("Thank you for playing (^-^)/\n");
 	printf("Made by: jowenzero\n");
+	getchar();
 	
 	return 0;
 }
