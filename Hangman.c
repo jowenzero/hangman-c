@@ -21,7 +21,6 @@ int main()
 	int wordCount;
 	int mistake, trueCounter;
 	int dupeCounter;
-	int flush;
 		
 	// char variable
 	char start[15];
@@ -94,7 +93,7 @@ int main()
 			choice = 0;
 			printf("Choice: ");
 			scanf("%d", &choice);
-			while ((flush = getchar()) != '\n' && flush != EOF);
+			while (getchar() != '\n');
 		}
 		while ((choice != 1 && choice != 2 && choice != 3));
 		
@@ -108,7 +107,7 @@ int main()
 				strcpy(start, "\0");
 				printf("Please type 'Start Game' to begin: ");
 				scanf("%[^\n]s", start);
-				while ((flush = getchar()) != '\n' && flush != EOF);
+				while (getchar() != '\n');
 			}
 			while (validStart(start) == false);
 			
@@ -199,7 +198,7 @@ int main()
 						// prompt user input
 						printf("\n\nInput Character : ");
 						scanf(" %c", &input);
-						while ((flush = getchar()) != '\n' && flush != EOF);	
+						while (getchar() != '\n');	
 						
 						// check for previous input duplicates
 						input = toupper(input);					
